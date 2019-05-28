@@ -1,0 +1,14 @@
+.container{
+  text-align: center;
+}
+
+.form-control{
+    width: 250px;
+    margin-left: 345px;
+    margin-bottom: 5px;
+}
+
+input{
+  width: 100px;
+  margin-right: 350px;  
+}

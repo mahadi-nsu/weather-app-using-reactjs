@@ -1,0 +1,9 @@
+.weather-data{
+   text-align: left;
+   margin-left: 345px;
+   padding-top: 20px;
+}
+
+p{
+    font-weight: bold;
+}

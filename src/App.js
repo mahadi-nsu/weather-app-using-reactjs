@@ -1,8 +1,13 @@
 import React, { Component } from "react";
-import "./App.css";
+
+//Component import
+import Weather from "./components/Weather";
+import Heading from "./components/Heading";
+
+//css file import
+import "./components/stylesheets/app.css";
 
 const API_KEY = "48b0c5fe39d7f2112578c50444316b97";
-
 
 class App extends Component {
   state = {
@@ -40,25 +45,37 @@ class App extends Component {
     // console.log(data);
   };
 
-
   handleSubmit = event => {
     event.preventDefault();
-    alert(this.state.city);
+    // alert(this.state.city);
     this.getWeather();
   };
 
   render() {
+    const { temp, humidity, description, error } = this.state;
     return (
-      <div className="App">
+      <div className="container">
+        <Heading />
         <form onSubmit={this.handleSubmit}>
-          <select value={this.state.value} onChange={this.handleChange}>
+          <select
+            value={this.state.value}
+            onChange={this.handleChange}
+            className="form-control"
+          >
             <option value="dhaka">Dhaka</option>
             <option value="chittagong">Chittagong</option>
             <option value="rajshahi">Rajshahi</option>
             <option value="sylhet">Sylhet</option>
           </select>
-          <input type="submit" value="Submit" />
+          <input type="submit" value="Submit" className="btn btn-default" />
         </form>
+
+        <Weather
+          temp={temp}
+          humidity={humidity}
+          description={description}
+          error={error}
+        />
       </div>
     );
   }
