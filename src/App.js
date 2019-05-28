@@ -34,15 +34,15 @@ class App extends Component {
         temp: data.main.temp,
         humidity: data.main.humidity,
         description: data.weather[0].description,
-        error: ""
       });
     } catch (err) {
+      console.log(err)
       this.setState({
-        error: err
-      });
+        error : " " + err
+      })
     }
 
-    // console.log(data);
+    // alert(this.state.error)
   };
 
   handleSubmit = event => {
@@ -56,7 +56,7 @@ class App extends Component {
   }
 
   componentWillUnmount() {
-    this.timer = null; // here...
+    this.timer = null; 
   }
 
   render() {
