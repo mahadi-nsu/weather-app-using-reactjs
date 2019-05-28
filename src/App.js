@@ -51,6 +51,14 @@ class App extends Component {
     this.getWeather();
   };
 
+  componentDidMount() {
+    this.timer = setInterval(() => this.getWeather(), 5 * 60 * 1000);
+  }
+
+  componentWillUnmount() {
+    this.timer = null; // here...
+  }
+
   render() {
     const { temp, humidity, description, error } = this.state;
     return (
