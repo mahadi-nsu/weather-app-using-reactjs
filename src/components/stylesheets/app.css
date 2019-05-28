@@ -11,4 +11,9 @@
 input{
   width: 100px;
   margin-right: 350px;  
-}
+
+} 
+marquee{
+    margin-top: 80px;
+    color: brown;
+  }
