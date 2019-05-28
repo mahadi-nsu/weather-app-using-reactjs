@@ -84,6 +84,7 @@ class App extends Component {
           description={description}
           error={error}
         />
+        <marquee behavior="scroll" direction="left">Data Will be refreshed after every 5 minutes interval</marquee>
       </div>
     );
   }
